@@ -12,14 +12,17 @@ export default class MainContextProvider extends Component {
             trending: [],
             host: ""
         },
-
-        uri: "https://tigly.glitch.me"
+        // uri: "https://tigly.glitch.me"
+        uri: "https://tigly.herokuapp.com",
+        isLoadingLink: false,
     }
+
+    count = 0;
 
     populateTable = async () => {
         try {
             let keys = await localStorage.getItem("keys");
-            console.log(keys);
+            // console.log(keys);
 
             let res = await fetch(this.state.uri + "/trending", {
                 method: "POST",
@@ -30,11 +33,20 @@ export default class MainContextProvider extends Component {
             });
 
             let data = await res.json();
-            console.log(data);
-            this.setState({data: {...data.links, host: data.host}, })
+            // console.log(data);
+            if (data.status) {
+                this.count = 0;
+                this.setState({ data: { ...data.links, host: data.host }, })
+            }
         }
         catch (error) {
-            console.log(error);
+            // console.log(error);
+            if (this.count < 50) {
+                this.count++;
+                setTimeout(async () => {
+                    await this.populateTable();
+                }, 3000);
+            }
         }
     }
 
@@ -42,6 +54,8 @@ export default class MainContextProvider extends Component {
         console.log(link);
         let data = { link: link }
         try {
+            this.setState({ isLoadingLink: true, shortLink: null });
+
             let result = await fetch(this.state.uri + "/shorten", {
                 method: "POST",
                 body: JSON.stringify(data),
@@ -51,6 +65,9 @@ export default class MainContextProvider extends Component {
             })
 
             let shortLink = await result.json();
+
+            this.setState({ isLoadingLink: false });
+
 
             if (shortLink.status) {
                 this.setState({ shortLink: shortLink.shortened_link });
@@ -88,7 +105,13 @@ export default class MainContextProvider extends Component {
 
     componentDidMount = () => {
         (async () => {
-            this.populateTable();
+            try {
+                await this.populateTable();
+            }
+            catch (error) {
+
+            }
+
         })();
     }
 
@@ -96,7 +119,7 @@ export default class MainContextProvider extends Component {
         return (
             <MainContext.Provider value={{
                 ...this.state,
-                createShortLink :this.createShortLink
+                createShortLink: this.createShortLink
             }}>
                 {this.props.children}
             </MainContext.Provider>

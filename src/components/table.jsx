@@ -40,7 +40,7 @@ const table = () => {
                         <tbody>
                             {myLinks.map((elem) => {
                                 return (
-                                    <tr key={elem.linkCode}>
+                                    <tr key={(elem.expiration* Math.random()).toString()}>
                                         <td>{elem.link.slice(0, 35) + "..."}</td>
                                         <td className="short-link">
                                             <i class="fas fa-link link-icon-table"></i>

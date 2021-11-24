@@ -41,6 +41,10 @@
         font-size: 1em;
     }
 
+    .shortLink-container{
+        height: 30px;
+    }
+
     .shortLink-div {
         font-size: 0.8em;
         padding: 10px;

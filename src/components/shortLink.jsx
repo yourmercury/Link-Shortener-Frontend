@@ -1,7 +1,7 @@
 import React from "react";
 import "./shortLink.css";
 
-const shortLink = ({ shortLink }) => {
+const shortLink = ({ shortLink, isLoading }) => {
 
     function copyText() {
         navigator.clipboard.writeText(shortLink)
@@ -16,6 +16,7 @@ const shortLink = ({ shortLink }) => {
 
     return (
         <div className="shortLink-container">
+            {isLoading && <progress className="progress-bar"/>}
             {shortLink ? <p className="shortLink-div">
                 <i className="fas fa-link shortLink-icon"></i>
                 <span className="shortLink-input" >

@@ -5,7 +5,7 @@ import { MainContext } from "../contexts/main.context";
 
 const input = () => {
     let linkInput = useRef(null);
-    let { createShortLink, shortLink } = useContext(MainContext);
+    let { createShortLink, shortLink, isLoadingLink } = useContext(MainContext);
 
     const onShorten = () => {
         let link = linkInput.current.value
@@ -42,7 +42,7 @@ const input = () => {
                 </button>
             </div>
 
-            <ShortLink shortLink={shortLink} />
+            <ShortLink shortLink={shortLink} isLoading={isLoadingLink} />
         </div>
     );
 }

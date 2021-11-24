@@ -1,11 +1,16 @@
 .footer-container {
-    padding: 10px var(--side-padding);
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
 }
 
 .footer-content {
     margin: auto;
     width: fit-content;
     font-size: 0.9em;
+    color:rgb(136, 136, 136);
 }
 
 .footer-pleading {

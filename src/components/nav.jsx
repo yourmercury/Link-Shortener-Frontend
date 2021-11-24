@@ -5,7 +5,7 @@ const navbar = () => {
     return (
         <nav>
             <h1 className="nav-logo">
-                Sho.rt
+                Tig.ly
             </h1>
 
             {/* <div className="nav-links">
