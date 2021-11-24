@@ -1,0 +1,19 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px var(--side-padding);
+    align-items: center ;
+}
+
+.nav-logo {
+    font-family: 'Rock Salt', cursive;
+}
+
+.nav-link {
+    margin-left: 50px;
+}
+
+#present-page {
+    color: var(--theme-blue-2);
+    font-weight: 800;
+}

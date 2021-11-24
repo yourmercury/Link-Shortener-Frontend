@@ -1,0 +1,13 @@
+.footer-container {
+    padding: 10px var(--side-padding);
+}
+
+.footer-content {
+    margin: auto;
+    width: fit-content;
+    font-size: 0.9em;
+}
+
+.footer-pleading {
+    padding: 0 10px;
+}

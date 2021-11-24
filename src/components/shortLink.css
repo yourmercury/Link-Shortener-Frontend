@@ -1,0 +1,43 @@
+.shortLink-container {
+    
+}
+
+.shortLink-div {
+    padding: 30px;
+    background-color: var(--green-btn);
+    background-color: #5CBFDF;
+    width: fit-content;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.shortLink-icon {
+    color: white;
+}
+
+.shortLink-input {
+    background-color: var(--green-btn);
+    background-color: #5CBFDF;
+    border: none;
+    color: white;
+    width: auto;
+    outline: none;
+    margin-left: 10px;
+}
+
+.input {
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1px 6px;
+  color: white;
+}
+
+.shortLink-copy-icon {
+    /* position: absolute;
+    top: 10px;
+    right: 10px; */
+    color: white;
+    margin-left: 10px;
+}

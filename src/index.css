@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
+  --theme-blue: #969FD5;
+  --theme-blue-1: #4c61da;
+  --theme-blue-2: #334192;
+
+  --table-border: rgb(202, 202, 202);
+  --green-btn: #5CB85B;
+
+  --side-padding: 10vw;
+}
