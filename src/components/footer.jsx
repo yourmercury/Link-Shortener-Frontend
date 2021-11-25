@@ -6,7 +6,7 @@ const footer = () => {
         <div className="footer-container">
             <p className="footer-content">
                 © 2021 tig.ly. <span className="footer-pleading">I can code.. Please Hire me</span>
-                <a href="https://twiiter.com/polycarp_momoh" className="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://twitter.com/polycarp_momoh" className="twitter"><i class="fab fa-twitter"></i></a>
             </p>
         </div>
     );
