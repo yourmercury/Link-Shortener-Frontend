@@ -18,8 +18,6 @@
 }
 
 .shortLink-input {
-    background-color: var(--green-btn);
-    background-color: #5CBFDF;
     border: none;
     color: white;
     width: auto;
@@ -46,4 +44,8 @@
 .progress-bar {
     width: 100px;
     height: 5px;
+}
+
+#error-color {
+    background-color: rgb(226, 60, 60);
 }

@@ -18,6 +18,7 @@ export default class MainContextProvider extends Component {
     }
 
     count = 0;
+    count1 = 0;
 
     populateTable = async () => {
         try {
@@ -96,10 +97,17 @@ export default class MainContextProvider extends Component {
 
 
             } else {
-                this.setState({ errorMessage: shortLink.error });
+                this.setState({ shortLink: shortLink.error });
             }
         } catch (error) {
-            console.log(error);
+            if (this.count1 < 5) {
+                this.count1++;
+                setTimeout(async () => {
+                    await this.createShortLink(link);
+                }, 3000);
+            } else {
+                this.setState({ shortLink: "Network Error", isLoadingLink: false });
+            }
         }
     }
 

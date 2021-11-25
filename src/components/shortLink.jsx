@@ -2,6 +2,10 @@ import React from "react";
 import "./shortLink.css";
 
 const shortLink = ({ shortLink, isLoading }) => {
+    let error = false
+    if (shortLink) {
+        error = shortLink.includes(" ");
+    }
 
     function copyText() {
         navigator.clipboard.writeText(shortLink)
@@ -17,7 +21,7 @@ const shortLink = ({ shortLink, isLoading }) => {
     return (
         <div className="shortLink-container">
             {isLoading && <progress className="progress-bar"/>}
-            {shortLink ? <p className="shortLink-div">
+            {shortLink ? <p className="shortLink-div" id={error ? "error-color": ""}>
                 <i className="fas fa-link shortLink-icon"></i>
                 <span className="shortLink-input" >
                     {shortLink}
